@@ -18,19 +18,26 @@
     <title>Weather App</title>
 
 </head>
-<body>
-    <div class="h-screen w-84 bg-[#86efac] ">
-      
-      
-      <input id="ipt" placeholder="Enter the city name" type="text" class="p-2 bg-white-400 rounded ml-10 mt-10"> 
-      <button id="Search" class="p-2 bg-gray-500 rounded">Search</button>
-      <div class="ml-10 mb-10">
-  <img id="ih" src="./images/drizzle.png" class="h-24 w-24 ml-14">
-   <p id="degree" class="font-bold text-2xl ml-14 	font-family: ui-sans-serif   "> 22°C</p>
-   <p id="name" class="font-bold text-3xl ml-8 	font-family: ui-sans-serif   ">New Work</p>
+<body >
+  
+ 
+    <div class="pb-10 mt-36 pl-[240px] ml-[200px]  bg-[#a78bfa] w-4/6 rounded-2xl shadow-xl">
 
 
-</div>
+      <div class="ml-20 ">
+        <input id="ipt" placeholder="Enter the city name" type="text" class="p-2 bg-white-400 rounded ml-10 mt-10"> 
+        <button id="Search" class="p-2 bg-[#a3e635] rounded">Search</button>
+        <div class="ml-10 mb-10">
+    <img id="ih" src="./images/drizzle.png" class="mt-4 h-24 w-24 ml-14">
+     <p id="degree" class=" pl-4 italic  font-bold text-2xl ml-14 	text-gray-800   "> 22°C</p>
+     <p id="name" class="text-gray-800  font-bold text-3xl ml-8 	font-family: ui-sans-serif   ">New Work</p>
+  
+  
+  </div>
+
+
+      </div>
+      
 
 
 <div class="flex">
@@ -38,8 +45,8 @@
          <img src="./images/humidity.png" class="h-18  ml-4">
          <div>
 
-           <p id="humidity" class="font-bold text-2xl ml-10">48% </p>
-           <p class="font-bold text-2xl ml-10">Humidity</p>
+           <p id="humidity" class="text-gray-800 font-bold text-2xl ml-10">48% </p>
+           <p class="text-gray-800 font-bold text-2xl ml-10">Humidity</p>
 
          </div>
          
@@ -49,8 +56,8 @@
          <img src="./images/wind.png" class="h-18  ml-4">
          <div>
 
-           <p id="wind" class="font-bold text-2xl ml-10">10.29 Km/h </p>
-           <p id="wind" class="font-bold text-2xl ml-10">Wind </p>
+           <p id="wind" class="text-gray-800 font-bold text-2xl ml-10">10.29 Km/h </p>
+           <p id="wind" class="text-gray-800 font-bold text-2xl ml-10">Wind </p>
 
          </div>
 
@@ -59,11 +66,7 @@
          
            
     
-
-    </div>
-
-
-
+</div>
 
 </body>
 <script src="./weather.js">
