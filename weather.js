@@ -42,7 +42,10 @@ async function checkWeather(city) {
     }
     if (data.weather[0].main == "Mist") {
       img.src = "./images/mist.png";
-    }
+  }
+   if (data.weather[0].main == "Haze") {
+     img.src = "./images/haze.png";
+   }
 
 
 
