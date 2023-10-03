@@ -36,7 +36,7 @@ async function checkWeather(city) {
   
 const response2 = await fetch(apiUrl2+city);
   var data2 = await response2.json();
-  console.log(data);
+  // console.log(data);
 
 
     document.getElementById("degree").innerHTML = Math.round(data.main.temp) + "°C";
@@ -57,7 +57,7 @@ const response2 = await fetch(apiUrl2+city);
     }
     if (data.weather[0].main == "Clear") {
       img.src = "./images/clear.png";
-      document.getElementById("background").style.backgroundImage = 'url("./bg-img/rain.jpg")';
+      document.getElementById("background").style.backgroundImage = 'url("./bg-img/clear.jpg")';
 
     }
     if (data.weather[0].main == "Drizzle") {
@@ -72,27 +72,51 @@ document.getElementById("background").style.backgroundImage = 'url("./bg-img/sno
     }
     if (data.weather[0].main == "Mist") {
       img.src = "./images/mist.png";
-      document.getElementById("background").style.backgroundImage = 'url("./bg-img/haze.jpg")';
+      document.getElementById("background").style.backgroundImage = 'url("./bg-img/mist.jpg")';
 
   }
    if (data.weather[0].main == "Haze") {
      img.src = "./images/haze.png";
-     document.getElementById("background").style.backgroundImage = 'url("./bg-img/haze.jpg")';
+     document.getElementById("background").style.backgroundImage = 'url("./bg-img/mist.jpg")';
 
   }
-  document.getElementById("img2").src = data2[0].flags.png;
-  
- document.getElementById("country").innerHTML ="Country :" + data2[0].name.common;
-
+  if (data2.status != "404") {
     
-  document.getElementById("region").innerHTML ="Region :" + data2[0].region;
 
 
-  var populationInMillion = parseFloat(data2[0].population) / 1000000;
- console.log(populationInMillion)
-
-    document.getElementById("language").innerHTML ="Population:"+  populationInMillion;
+    document.getElementById("img2").src = data2[0].flags.png;
+    
+   document.getElementById("country").innerHTML ="Country :" + data2[0].name.common;
   
+      
+    document.getElementById("region").innerHTML ="Region :" + data2[0].region;
+  
+  
+    var populationInMillion = parseFloat(data2[0].population) / 1000000;
+   console.log(populationInMillion)
+  
+      document.getElementById("language").innerHTML ="Population:"+  populationInMillion;
+
+  }
+  else {
+    
+    var b = document.getElementById("img2");
+    // b.src = "";
+        b.style.height = "120px";
+        b.style.width = "120px";
+        b.style.borderRadius = "20px";
+    
+   document.getElementById("country").innerHTML ="Country :" 
+  
+      
+    document.getElementById("region").innerHTML = "Region :";
+  
+  
+  
+      document.getElementById("language").innerHTML ="Population:"
+
+
+  }
     
     //  document.getElementById("humidity").innerHTML = data.main.humidity + "%";
     // document.getElementById("wind").innerHTML = data.wind.speed + "km/h";
