@@ -95,13 +95,13 @@ document.getElementById("background").style.backgroundImage = 'url("./bg-img/sno
     var populationInMillion = parseFloat(data2[0].population) / 1000000;
    console.log(populationInMillion)
   
-      document.getElementById("language").innerHTML ="Population:"+  populationInMillion;
+      document.getElementById("language").innerHTML ="Population:"+  populationInMillion+"M";
 
   }
   else {
     
     var b = document.getElementById("img2");
-    // b.src = "";
+    b.src = '';
         b.style.height = "120px";
         b.style.width = "120px";
         b.style.borderRadius = "20px";
