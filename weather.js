@@ -36,7 +36,7 @@ async function checkWeather(city) {
   
 const response2 = await fetch(apiUrl2+city);
   var data2 = await response2.json();
-  console.log(data2);
+  console.log(data);
 
 
     document.getElementById("degree").innerHTML = Math.round(data.main.temp) + "°C";
@@ -48,24 +48,37 @@ const response2 = await fetch(apiUrl2+city);
 
     
 
-    
+  var a=document.getElementById("background");
     if (data.weather[0].main == "Clouds") {
       img.src = "./images/clouds.png";
+       a.style.backgroundImage= 'url("./bg-img/clouds.jpg")';
+      
+
     }
     if (data.weather[0].main == "Clear") {
       img.src = "./images/clear.png";
+      document.getElementById("background").style.backgroundImage = 'url("./bg-img/rain.jpg")';
+
     }
     if (data.weather[0].main == "Drizzle") {
       img.src = "./images/drizzle.png";
+      document.getElementById("background").style.backgroundImage = 'url("./bg-img/rain.jpg")';
+
     }
     if (data.weather[0].main == "Snow") {
       img.src = "./images/snow.png";
+document.getElementById("background").style.backgroundImage = 'url("./bg-img/snow.jpg")';
+
     }
     if (data.weather[0].main == "Mist") {
       img.src = "./images/mist.png";
+      document.getElementById("background").style.backgroundImage = 'url("./bg-img/haze.jpg")';
+
   }
    if (data.weather[0].main == "Haze") {
      img.src = "./images/haze.png";
+     document.getElementById("background").style.backgroundImage = 'url("./bg-img/haze.jpg")';
+
   }
   document.getElementById("img2").src = data2[0].flags.png;
   
